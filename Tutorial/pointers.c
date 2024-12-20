@@ -6,7 +6,12 @@ int increment(int *p)
     int j = *p; // dereference pointer to access value of variable it points to
     *p = j + 1; // increment value of dereference
     // identical to *p = *p + 1;
-} 
+}
+
+int doubleValue(int *p)
+{
+    return *p * 2; // deref pointer to get value, double and return
+}
 
 int main(void)
 {
@@ -29,5 +34,14 @@ int main(void)
     printf("i is still %d\n", i); // value of i
     increment(p); // increment by passing pointer as argument: could also directly use &i as an argument (no need to previously declare pointer p)
     printf("i is now %d\n", i); // value of i
+
+    int j = 2;
+    int k;
+    int *q = &j;
+
+    printf("j = %d\n", j);
+    k = doubleValue(q);
+    printf("j = %d\n", j);
+    printf("k = %d\n", k);
 
 }
